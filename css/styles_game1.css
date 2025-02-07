@@ -1,0 +1,127 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to bottom, #ff9a9e, #fad0c4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-container {
+    text-align: center;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.game-description {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 20px;
+}
+
+.memory-game {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 cartes par ligne */
+    grid-gap: 15px; /* Espacement constant entre les cartes */
+    justify-content: center; /* Centre horizontalement les cartes */
+    justify-items: center; /* Centre chaque carte dans sa colonne */
+    align-content: center; /* Centre verticalement le conteneur dans la grille */
+    align-items: center; /* Centre chaque carte dans sa ligne */
+    max-width: 600px; /* Largeur maximale pour éviter que ça déborde */
+    margin: 0 auto; /* Centre la grille dans la page */
+}
+
+
+.memory-card {
+    width: 100px;
+    height: 140px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+.memory-card.flip {
+    transform: rotateY(180deg); /* Rotation fluide, la carte reste à sa place */
+}
+
+.back-face,
+.front-face {
+    width: 100%; /* Les dimensions restent fixes */
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+    backface-visibility: hidden;
+    overflow: hidden; /* Empêche tout débordement */
+}
+
+.back-face {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #fff;
+    font-weight: bold;
+    transform: rotateY(0deg);
+}
+
+.front-face {
+    background-size: cover;
+    background-position: center;
+    transform: rotateY(180deg);
+}
+
+.memory-card:hover {
+    box-shadow: 0px 6px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* Style du popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    text-align: center;
+    display: none; /* Masqué par défaut */
+    z-index: 1000;
+}
+
+.popup h2 {
+    margin: 0 0 10px;
+    font-size: 24px;
+    color: #333;
+}
+
+.popup p {
+    font-size: 18px;
+    color: #666;
+}
+
+.popup button {
+    margin-top: 15px;
+    padding: 10px 20px;
+    background: #e6005c;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.popup button:hover {
+    background: #c7004c;
+}

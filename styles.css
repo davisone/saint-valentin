@@ -1,0 +1,73 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    background: linear-gradient(to bottom, #ffafbd, #ffc3a0);
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    position: relative;
+    z-index: 1;
+    padding: 50px;
+    background: rgba(255, 255, 255, 0.8);
+    border-radius: 20px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 80%;
+}
+
+h1 {
+    font-size: 3.5em;
+    color: #e6005c;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+p {
+    font-size: 1.5em;
+    color: #d63384;
+    margin-bottom: 20px;
+}
+
+.hearts-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.heart {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    background-color: red;
+    clip-path: polygon(50% 0%, 100% 35%, 85% 100%, 50% 85%, 15% 100%, 0% 35%);
+    opacity: 0.8;
+    animation: fall linear infinite, float 3s ease-in-out infinite;
+}
+
+@keyframes fall {
+    from {
+        transform: translateY(-100vh) rotate(0deg);
+    }
+    to {
+        transform: translateY(100vh) rotate(360deg);
+    }
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateX(0);
+    }
+    50% {
+        transform: translateX(20px);
+    }
+}
