@@ -78,7 +78,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Vérifier si le joueur a perdu
     function checkDefeat() {
         if (remainingLives === 0) {
-            displayMessage(`Dommage, vous avez perdu ! Le jeu va recommencer.`, "error");
+            displayMessage(`T'es claqué mec ! Le jeu va recommencer.`, "error");
             setTimeout(() => initializeGame(), 2000); // Redémarrer le jeu après 2 secondes
         }
     }
